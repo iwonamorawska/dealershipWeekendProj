@@ -1,0 +1,222 @@
+insert into salesperson(
+	first_name,
+	last_name
+)
+values(
+	'Marsha',
+	'Brady'
+);
+insert into salesperson(
+	first_name,
+	last_name
+)
+values(
+	'Colton',
+	'Jefferson'
+);
+insert into salesperson(
+	first_name,
+	last_name
+)
+values(
+	'Justin',
+	'Glaze'
+);
+
+insert into car(
+	year,
+	make,
+	model,
+	used,
+	sold
+)
+values(
+	2009,
+	'Jeep',
+	'Wrangler',
+	true,
+	False
+);
+insert into car(
+	year,
+	make,
+	model,
+	used,
+	sold
+)
+values(
+	2021,
+	'Jeep',
+	'Cherokee',
+	false,
+	true
+);
+insert into car(
+	year,
+	make,
+	model,
+	used,
+	sold
+)
+values(
+	2021,
+	'Honda',
+	'Civic',
+	false,
+	False
+);
+insert into car(
+	year,
+	make,
+	model,
+	used,
+	sold
+)
+values(
+	2015,
+	'Toyota',
+	'Corrola',
+	true,
+	true
+);
+
+insert into d_customer(
+	first_name,
+	last_name
+)
+values(
+	'Jac',
+	'Forrest'
+);
+insert into d_customer(
+	first_name,
+	last_name
+)
+values(
+	'Polly',
+	'Moon'
+);
+insert into d_customer(
+	first_name,
+	last_name
+)
+values(
+	'Dave',
+	'Hanson'
+);
+insert into d_customer(
+	first_name,
+	last_name
+)
+values(
+	'George',
+	'Glass'
+);
+insert into invoice(
+	price,
+	vin_num,
+	customer_id,
+	sales_id,
+	date
+)
+values(
+	30000.00,
+	5,
+	4,
+	1,
+	current_timestamp
+);
+insert into invoice(
+	price,
+	vin_num,
+	customer_id,
+	sales_id,
+	date
+)
+values(
+	15999.00,
+	7,
+	3,
+	2,
+	current_timestamp
+);
+insert into mechanic(
+	first_name,
+	last_name
+)
+values(
+	'Jack',
+	'Bower'
+);
+insert into mechanic(
+	first_name,
+	last_name
+)
+values(
+	'Veronica',
+	'Mars'
+);
+insert into parts(
+	part_name,
+	price
+)
+values(
+	'Oil Filter',
+	15.99
+);
+insert into parts(
+	part_name,
+	price
+)
+values(
+	'Axel',
+	129.99
+);
+insert into service_ticket(
+	customer_id,
+	vin_num,
+	mechanic_id,
+	part_id,
+	date,
+	total_cost,
+	service_type
+)
+values(
+	5,
+	4,
+	1,
+	1,
+	current_timestamp,
+	45.59,
+	'Oil Change'
+);
+insert into service_ticket(
+	customer_id,
+	vin_num,
+	mechanic_id,
+	part_id,
+	date,
+	total_cost,
+	service_type
+)
+values(
+	6,
+	6,
+	2,
+	2,
+	current_timestamp,
+	180.00,
+	'Wheel Fix'
+);
+insert into service_record(
+	st_id
+)
+values(
+	1
+);
+insert into service_record(
+	st_id
+)
+values(
+	2
+);

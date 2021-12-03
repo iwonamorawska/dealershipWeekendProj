@@ -1,0 +1,58 @@
+create table d_customer(
+	customer_id SERIAL primary key,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30)
+);
+create table car(
+	vin_num SERIAL primary key,
+	year VARCHAR(4),
+	make VARCHAR(25),
+	model VARCHAR(25),
+	used BOOLEAN,
+	sold BOOLEAN
+);
+create table salesperson(
+	sales_id SERIAL primary key,
+	first_name VARCHAR(25),
+	last_name VARCHAR(25)
+);
+create table invoice(
+	PO_id SERIAL primary key,
+	price numeric(9,2),
+	date TIMESTAMP,
+	vin_num INTEGER not null,
+	foreign key (vin_num) references car(vin_num),
+	customer_id INTEGER not null,
+	foreign key(customer_id) references d_customer(customer_id),
+	sales_id INTEGER not null,
+	foreign key(sales_id) references salesperson(sales_id)
+);
+create table mechanic(
+	mechanic_id SERIAL primary key,
+	first_name VARCHAR(25),
+	last_name VARCHAR(25)
+);
+create table parts(
+	part_id SERIAL primary key,
+	part_name VARCHAR(25),
+	price numeric(7,2)
+);
+create table service_ticket(
+	st_id SERIAL primary key,
+	customer_id INTEGER not null,
+	foreign key(customer_id)references d_customer(customer_id),
+	vin_num INTEGER not null,
+	foreign key(vin_num)references car(vin_num),
+	mechanic_id INTEGER not null, 
+	foreign key(mechanic_id)references mechanic(mechanic_id),
+	part_id INTEGER not null,
+	foreign key (part_id)references parts(part_id),
+	date TIMESTAMP,
+	total_cost NUMERIC(9,2),
+	service_type VARCHAR(30)
+);
+create table service_record(
+	record_id SERIAL primary key,
+	st_id INTEGER not null,
+	foreign key(st_id)references service_ticket(st_id)
+);
